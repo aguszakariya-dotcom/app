@@ -48,16 +48,17 @@
   <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <!-- Toastr -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
   <!-- Theme style -->
+  <!-- Ekko Lightbox -->
+  <link rel="stylesheet" href="<?= BASEURL; ?>/plugins/ekko-lightbox/ekko-lightbox.css">
   <link rel="apple-touch-icon" sizes="180x180" href="<?= BASEURL; ?>/images/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="<?= BASEURL; ?>/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="<?= BASEURL; ?>/images/favicon-16x16.png">

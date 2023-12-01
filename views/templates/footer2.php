@@ -36,6 +36,10 @@
 <script src="<?= BASEURL; ?>/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?= BASEURL; ?>/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- PAGE plugins -->
+<!-- Ekko Lightbox -->
+<script src="<?= BASEURL; ?>/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- Filterizr-->
+<script src="<?= BASEURL; ?>/plugins/filterizr/jquery.filterizr.min.js"></script>
 <!-- jQuery Mapael -->
 <script src="<?= BASEURL; ?>/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
 <script src="<?= BASEURL; ?>/plugins/raphael/raphael.min.js"></script>

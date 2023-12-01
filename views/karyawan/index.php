@@ -1,33 +1,120 @@
-<div class="row py-5 my-2 justify-content-center">
-    <div class="col-lg-9">
-        <div class="card shadow">
-            <div class="card-header">List Data karyawan</div>
-            <div class="card-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>No.</th>
-                            <th>Nama Lengkap</th>
-                            <th>Alamat</th>
-                            <th>Email</th>
-                            <th>No. Telepon</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                        $no = 1;
-                        foreach ($data['karyawan'] as $karya) : ?>
-                        <tr>
-                            <td><?= $no++; ?></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <?php endforeach ; ?>
-                    </tbody>
-                </table>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class="card-title">Data Karyawan</h4>
+            <div class="float-right"><a href="#" id="detil"><h5>Details <i class="fa-solid fa-right-to-bracket"></i></h5></a></div>
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="btn-group w-100 mb-2" id="jabatan-filter-group">
+                <!-- Elemen filter akan ditambahkan di sini oleh skrip jQuery -->
+              </div>
             </div>
+            <div class="filter-container p-0 row" id="employee-container" height="150px">
+              <!-- Elemen filtr-item akan ditambahkan di sini oleh skrip jQuery -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-secondary">
+          <div class="card-header"></div>
+          <div class="card-body">
+            <div class="table table-striped">
+              <thead>
+                <tr>
+                  <td>No.</td>
+                  <td style="width: 10px;" >Nama</td>
+                  <td>jabatan </td>
+                  <td>Alamat</td>
+                  <td>Email</td>
+                  <td>Phone</td>
+                  <td>Gambar</td>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                $no = 1;
+                foreach ($data['karyawan'] as $kary) :
+                ?>
+                <tr>
+                  <td><?= $no++; ?></td>
+                  <td><?= $kry['nama']; ?></td>
+                  <td><?= $kry['jabatan']; ?></td>
+                  <td><?= $kry['alamat']; ?></td>
+                  <td><?= $kry['email']; ?></td>
+                  <td><?= $kry['telepon']; ?></td>
+                  <td>
+                    <img src="<?= BASEURL; ?>/<?= $kry['gambar']; ?>">
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content -->
 </div>
+<!-- /.content-wrapper -->
+<style>
+  .img-thumbnail{
+    height: 280px;
+    width: 400px;
+  }
+</style>
+<script>
+  $(document).ready(function() {
+    $('#detil').click(function() {
+      $('#data').removeClass('collapse')
+    })
+    // Mengambil data dari API
+    $.getJSON('<?= BASEAPI; ?>/karyawan.php', function(data) {
+      // Mengumpulkan daftar jabatan unik
+
+
+      // Loop melalui setiap karyawan
+      $.each(data, function(index, karyawan) {
+        // Membuat elemen filtr-item untuk setiap karyawan
+        var filtrItem = $('<div class="filtr-item col-sm-2" data-category="' + karyawan.jabatan + '" data-sort="' + karyawan.jabatan + ' ">');
+        filtrItem.append('<a href="<?= BASEURL; ?>/imgTeam/' + karyawan.gambar + '" data-toggle="lightbox" data-title=" ' + karyawan.nama + '"><img src="<?= BASEURL; ?>/imgTeam/' + karyawan.gambar + '" class="img-fluid mb-2 img-thumbnail" width="150px" height="200px"/></a>');
+
+        // Menambahkan elemen filtr-item ke container
+        $('#employee-container').append(filtrItem);
+      });
+
+      // Inisialisasi Lightbox setelah mengganti gambar
+      $('[data-toggle="lightbox"]').lightbox();
+    });
+  });
+</script>
+
+
+<!-- Page specific script -->
+<script>
+  $(function() {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({
+      gutterPixels: 3
+    });
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
