@@ -22,26 +22,26 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 collapse" id="data">
         <div class="card card-secondary">
           <div class="card-header"></div>
           <div class="card-body">
-            <div class="table table-striped">
+            <table class="table table-striped table-bordered">
               <thead>
-                <tr>
-                  <td>No.</td>
-                  <td style="width: 10px;" >Nama</td>
-                  <td>jabatan </td>
-                  <td>Alamat</td>
-                  <td>Email</td>
-                  <td>Phone</td>
-                  <td>Gambar</td>
+                <tr style="font-size: medium;">
+                  <th style="width: 10px;">No.</th>
+                  <th  class="col-2">Nama</th>
+                  <th>jabatan </th>
+                  <th>Alamat</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Gambar</th>
                 </tr>
               </thead>
               <tbody>
                 <?php 
                 $no = 1;
-                foreach ($data['karyawan'] as $kary) :
+                foreach ($data['karyawan'] as $kry) :
                 ?>
                 <tr>
                   <td><?= $no++; ?></td>
@@ -51,12 +51,12 @@
                   <td><?= $kry['email']; ?></td>
                   <td><?= $kry['telepon']; ?></td>
                   <td>
-                    <img src="<?= BASEURL; ?>/<?= $kry['gambar']; ?>">
+                    <img src="<?= BASEURL; ?>/imgTeam/<?= $kry['gambar']; ?>" style="height: 30px; width: 24px">
                   </td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>
-            </div>
+            </table>
           </div>
         </div>
       </div>

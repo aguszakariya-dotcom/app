@@ -189,7 +189,7 @@
                </div>
           </div>
           <!-- Button for testing SweetAlert2 -->
-<button onclick="testSweetAlert()">Test SweetAlert2</button>
+<!-- <button onclick="testSweetAlert()">Test SweetAlert2</button> -->
 
 <script>
     // Function to test SweetAlert2
@@ -213,7 +213,7 @@
                     <table class="table table-striped" id="table-gaji" width="100%">
                          <thead>
                               <tr>
-                                   <th class="col-sm-2">Nama</th>
+                                   <th class="col-sm-3">Nama</th>
                                    <th class="col-sm-1">Item</th>
                                    <th class="col-sm-3">Description</th>
                                    <th>Cost</th>
@@ -359,10 +359,21 @@
           $('#qty, #harga').on('input', function() {
                calculateTotal();
           });
+          var jum = '';
           $("#size").change(function() {
+               
                $("#qty").focus()
+               $("#qty").val(jum)
                $("#qty").removeClass('btn-outline-danger shadow text-primary')
                $("#qty").addClass('bg-primary btn-outline-danger')
+          })
+          $("#qty").change(function() {
+               $("#harga").addClass('bg-primary btn-outline-danger')
+               $("#qty").removeClass('bg-primary btn-outline-danger')
+          })
+          $("#harga").change(function() {
+               $("#harga").removeClass('bg-primary btn-outline-danger')
+               $("#save").focus()
           })
           $("#save").focus(function() {
                $(".simpan").addClass('bounce bg-primary')

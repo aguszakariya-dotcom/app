@@ -8,7 +8,7 @@ class Karyawan extends Controller {
         $data['karyawan'] = $this->model('Karyawan_model')->getAllKaryawan();
         $this->view('templates/header2', $data);
         $this->view('templates/sidebar', $data);
-        $this->view('karyawan/index');
+        $this->view('karyawan/index', $data);
         $this->view('templates/footer2', $data);
     }
     public function daftar_gaji() {

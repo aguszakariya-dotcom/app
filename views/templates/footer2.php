@@ -3,7 +3,7 @@
         feather.replace();
     </script>
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer d-print-none">
     <strong>Copyright &copy; 2020-2023 <a href="https://fb.me/aguszakariya">By zack</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">

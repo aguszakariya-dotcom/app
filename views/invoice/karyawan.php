@@ -78,6 +78,9 @@ $tglSekarang = date('d-M-Y');
   .dataTables_filter {
     display: none;
   }
+  .main-footer {
+    display: none;
+  }
 </style>
 <div class="row justify-content-center mb-5">
   <!-- Main content -->
@@ -145,7 +148,7 @@ $tglSekarang = date('d-M-Y');
         </div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-outline-info">Simpan Gaji</button>
+          <button class="btn btn-outline-info collapse animate__animated" id="simpanGaji">Simpan Gaji</button>
         </div>
     </div>
     </form>
@@ -279,7 +282,7 @@ $tglSekarang = date('d-M-Y');
       <!-- this row will not appear when printing -->
       <div class="row no-print">
         <div class="col-12">
-          <a href="#" class="btn btn-default" onclick="window.print()"><i class="fas fa-print"></i> Print</a>
+          <a href="#" class="btn btn-default" onclick="window.print()" id="cetak"><i class="fas fa-print"></i> Print</a>
           <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
             Payment
           </button>
@@ -297,6 +300,11 @@ $tglSekarang = date('d-M-Y');
 
 <script>
   $(document).ready(function() {
+    $("#cetak").click(function() {
+      $("#simpanGaji").addClass('bg-danger animate__bounce animate__infinite	infinite')
+      $("#simpanGaji").removeClass('collapse')
+    })
+    
     // Inisialisasi DataTable pada tabel invoice
     var table = $('#table-invoice').DataTable();
 
