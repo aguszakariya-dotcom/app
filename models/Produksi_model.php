@@ -21,15 +21,15 @@ class Produksi_model {
     public function newProduksi($data) {
         // Ambil semua data dari $data
         $bulan = $data['bulan'];
-        $nama_customer = $data['nama_customer'];
-        $code = $data['code'];
-        $style = $data['style'];
-        $bahan = $data['bahan'];
-        $warna = $data['warna'];
-        $size = $data['size'];
+        $nama_customer = ucwords($data['nama_customer']);
+        $code = strtoupper($data['code']);
+        $style = ucwords($data['style']);
+        $bahan = ucwords($data['bahan']);
+        $warna = ucwords($data['warna']);
+        $size = strtoupper($data['size']);
         $qty = $data['qty'];
         $harga = $data['harga'];
-        $keterangan = $data['keterangan'];
+        $keterangan = ucwords($data['keterangan']);
         $jahit = $data['jahit'];
         $motong = $data['motong'];
         $naskat = $data['naskat'];

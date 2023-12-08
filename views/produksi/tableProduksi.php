@@ -25,7 +25,7 @@
             <td class="text-capitalize"><?= $produksi['warna']; ?></td>
             <td><?= $produksi['qty']; ?></td>
             <td class="">
-                <img src="http://localhost/img-produksi/<?= $produksi['gambar']; ?>" alt="" height="30" width="22" class=" zoom">
+                <img src="https://becik.my.id/img/<?= $produksi['gambar']; ?>" alt="" height="30" width="22" class=" zoom">
             </td>
             <td>
                 <?php

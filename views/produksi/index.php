@@ -238,7 +238,7 @@ $koneksi = mysqli_connect('becik.my.id:3306', 'akuntansi_ok', '123/akuntansi', '
                     $('#gambarSebelumnya').val(response.gambar);
 
                     // Menampilkan gambar di elemen img
-                    $('#gambarLama').attr('src', 'http://localhost/img-produksi/' + response.gambar);
+                    $('#gambarLama').attr('src', 'https://becik.my.id/img/' + response.gambar);
 
                     // $('#gambar').attr('src', 'https://raw.githubusercontent.com/aguszakariya-dotcom/img-produksi/main/' + response.gambar);
                 },
