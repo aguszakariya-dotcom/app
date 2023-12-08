@@ -160,7 +160,7 @@ if (isset($_POST['update'])) {
             </div>
         </div>
     </div>
-    <div class="col-lg-8 animate__animated animate__backInUp">
+    <div class="col-lg-8 col-md-11 col-sm-12 animate__animated animate__backInUp">
         <table id="dataTable" class="table table-striped" style="width:100%">
             <?php require_once 'tableSample.php' ?>
         </table>
@@ -226,7 +226,7 @@ if (isset($_POST['update'])) {
                     $('#gambarSebelumnya').val(response.gambar);
 
                     // Menampilkan gambar di elemen img
-                    $('#gambarLama').attr('src', 'http://localhost/img-produksi/' + response.gambar);
+                    $('#gambarLama').attr('src', 'https://becik.my.id/img/' + response.gambar);
 
                     // $('#gambar').attr('src', 'https://raw.githubusercontent.com/aguszakariya-dotcom/img-produksi/main/' + response.gambar);
                 },

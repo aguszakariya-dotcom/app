@@ -18,16 +18,16 @@ class Sample_model {
     public function tambahSample($data) {
         // Ambil semua data dari $data
         $tanggal = $data['tanggal'];
-        $nama_customer = $data['nama_customer'];
-        $style = $data['style'];
-        $code = $data['code'];
-        $warna = $data['warna'];
-        $size = $data['size'];
+        $nama_customer = ucwords($data['nama_customer']);
+        $style = ucwords($data['style']);
+        $code = strtoupper($data['code']);
+        $warna = ucwords($data['warna']);
+        $size = strtoupper($data['size']);
         $harga = $data['harga'];
         $habis = $data['habis'];
         $acc_1 = $data['acc_1'];
         $acc_2 = $data['acc_2'];
-        $keterangan = $data['keterangan'];
+        $keterangan = ucwords($data['keterangan']);
         
 // Menyiapkan gambar
 $gambar = ''; // Gambar default jika tidak ada gambar baru

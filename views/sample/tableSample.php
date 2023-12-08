@@ -2,7 +2,7 @@
     <thead>
     <tr class="text-bold">
         <th><i class="fa-solid fa-user-pen tambah text-primary"></i></th>
-        <th class="col-sm-2">Date</th>
+        <th>Date</th>
             <th class="col-sm-2">Customer</th>
             <th>Code</th>
             <th class="col-sm-2">Style</th>
@@ -18,13 +18,13 @@
         foreach ($data['sample'] as $sample) {
         ?>
             <tr>
-                <td><?= $no++ ?></td>
-                <td ><?= tgl_kita($sample['tanggal']) ?></td>
+                <td style="width: 20px;"><?= $no++ ?></td>
+                <td class="col-2"><?= date('d-m-Y', strtotime($sample['tanggal'])) ?></td>
                 <td><?= $sample['nama_customer'] ?></td>
                 <td><?= $sample['code'] ?></td>
                 <td ><?= $sample['style'] ?></td>
                 <td><?= $sample['warna'] ?></td>
-                <td><img src="../../../../img-produksi/<?= $sample['gambar'] ?>" class="zoom" width="28px" height="32px"></td>
+                <td><img src="https://becik.my.id/img/<?= $sample['gambar'] ?>" class="zoom" width="28px" height="32px"></td>
                 <td class="text-large"><?php
                     if ($sample['harga'] == '0') {
                         echo '<img src="images/proses.gif" width="30">';
