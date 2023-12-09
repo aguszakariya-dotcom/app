@@ -24,7 +24,7 @@
                 <td><?= $sample['code'] ?></td>
                 <td ><?= $sample['style'] ?></td>
                 <td><?= $sample['warna'] ?></td>
-                <td><img src="https://becik.my.id/img/<?= $sample['gambar'] ?>" class="zoom" width="28px" height="32px"></td>
+                <td><img src="https://becik.my.id/img/<?= $sample['gambar'] ?>" class="zoom" width="20px" height="26px"></td>
                 <td class="text-large"><?php
                     if ($sample['harga'] == '0') {
                         echo '<img src="images/proses.gif" width="30">';
@@ -46,3 +46,11 @@
             </tr>
         <?php } ?>
     </tbody>
+    <style>
+        .table td {
+    padding-top: 4px;
+    padding-bottom: 2px;
+    align-items: center;
+    font-size: 12px;
+}
+    </style>

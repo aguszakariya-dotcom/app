@@ -25,16 +25,16 @@
             <td class="text-capitalize"><?= $produksi['warna']; ?></td>
             <td><?= $produksi['qty']; ?></td>
             <td class="">
-                <img src="https://becik.my.id/img/<?= $produksi['gambar']; ?>" alt="" height="30" width="22" class=" zoom">
+                <img src="https://becik.my.id/img/<?= $produksi['gambar']; ?>" alt="" height="26" width="20" class=" zoom">
             </td>
             <td>
                 <?php
                 if ($produksi['status'] == 'Menunggu') {
                     echo '<i data-feather="clock"></i>';
                 } else if ($produksi['status'] == 'Proses') {
-                    echo '<img src="images/proses.gif" width="40">';
+                    echo '<img src="images/proses.gif" width="26">';
                 } else if ($produksi['status'] == 'Finish') {
-                    echo '<img src="images/done.png" width="40">';
+                    echo '<img src="images/done.png" width="26">';
                 } else if ($produksi['status'] == '') {
                     echo '<span data-feather="badge badge-danger">Finish</span>';
                 }
@@ -62,3 +62,11 @@
         });
     });
 </script>
+<style>
+        .table td {
+    padding-top: 4px;
+    padding-bottom: 2px;
+    align-items: center;
+    font-size: 12px;
+}
+    </style>
