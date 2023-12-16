@@ -1,3 +1,8 @@
+
+<!-- <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ ?> -->
 <div class="row mt-5 mb-5 justify-content-center animate__animated fadeIndownBig">
     <div class="col-lg-7">
         <div class="card card-secondary">
@@ -35,9 +40,12 @@
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer">
-    <div class="float-left text-bold btn btn-outline-primary animate__animated animate__bounceOut animate__infinite animate__slower">Rp. <?= number_format($data['semingguGaji']['total_gaji'], 0, ',', '.'); ?></div>
-    <div class="float-right text-bold btn btn-outline-info">Rp. <?= number_format($data['totalGaji']['total_gaji'], 0, ',', '.'); ?></div>
+            <div class="card-footer row d-flex">
+    <div class="col-3 text-bold btn btn-outline-primary animate__animated animate__bounceOut animate__infinite animate__slower">Rp. <?= number_format($data['gajiHariIni']['total_gajiSkrg'], 0, ',', '.'); ?></div>
+    <div class="col"></div>
+    <div class="col-3 text-bold btn btn-outline-info">Rp. <?= number_format($data['semingguGaji']['total_mingguIni'], 0, ',', '.'); ?></div>
+    <div class="col"></div>
+    <div class="col-3text-bold btn btn-outline-info">Rp. <?= number_format($data['sebulanGaji']['total_BulanIni'], 0, ',', '.'); ?></div>
 </div>
 
         </div>

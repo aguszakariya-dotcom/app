@@ -47,7 +47,7 @@
      }
 
      .table td {
-          font-size: 12px;
+          font-size: 13px;
      }
 
      .table th {

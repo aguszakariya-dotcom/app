@@ -22,18 +22,36 @@ class Karyawan_model {
         $this->db->query('SELECT SUM(total) as total_gaji FROM daftar_gaji');
         return $this->db->single();
     }
-    public function totalSemingguKaryawan() 
+    public function GajiKaryawanHariIni() 
     {
-        // Hitung tanggal 1 minggu ke belakang dari hari ini
-        $tanggalAwal = date('Y-m-d', strtotime('-1 week'));
-    
-        // Tambahkan kriteria tanggal ke dalam query
-        $this->db->query('SELECT SUM(total) as total_gaji FROM daftar_gaji WHERE tanggal >= :tanggalAwal');
-        $this->db->bind('tanggalAwal', $tanggalAwal);
-    
+        $hariIni = date('d-M-Y');
+        $this->db->query('SELECT SUM(total) as total_gajiSkrg FROM daftar_gaji where tanggal = :hariIni');
+        $this->db->bind(':hariIni', $hariIni);
         return $this->db->single();
+        // return $result['total'];
     }
+
+    public function GajiKaryawanBulanIni() 
+{
+     // Mendapatkan tanggal awal dan akhir bulan ini
+     $tanggalAwal = date('Y-m-01');
+     $tanggalAkhir = date('Y-m-t');
+    $this->db->query('SELECT SUM(total) as total_BulanIni FROM daftar_gaji WHERE tanggal BETWEEN :tanggalAwal AND :tanggalAkhir');
+    $this->db->bind('tanggalAwal', $tanggalAwal);
+        $this->db->bind('tanggalAkhir', $tanggalAkhir);
+
+        return $this->db->single();
+}
+
+    public function GajiKaryawanMingguIni() 
+{
+    $this->db->query('SELECT SUM(total) as total_mingguIni FROM daftar_gaji WHERE WEEK(tanggal) = WEEK(NOW())');
+    return $this->db->single();
+    // return $result['total'];
+}
     
+ 
     
+
     
 }

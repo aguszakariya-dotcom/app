@@ -28,7 +28,7 @@ class Form_model {
 
     public function getAllPoduksi()
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY id DESC');
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY id DESC limit 50');
         return $this->db->resultSet();
     }
 

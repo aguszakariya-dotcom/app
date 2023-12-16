@@ -329,7 +329,7 @@
               <!-- /.card-header -->
               <div class="card-body p-0">
                 <div class="table-responsive">
-                  <table class="table m-0">
+                  <table class="table table-striped ">
                     <thead>
                     <tr>
                       <th>Customer</th>
