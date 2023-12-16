@@ -304,7 +304,12 @@ $tglSekarang = date('d-M-Y');
       $("#simpanGaji").addClass('bg-danger animate__bounce animate__infinite	infinite')
       $("#simpanGaji").removeClass('collapse')
     })
-    
+    $('#simpanGaji').on('mouseenter',  function() {
+      $("#simpanGaji").removeClass('bg-danger animate__bounce animate__infinite	infinite')
+      $("#simpanGaji").addClass('bg-primary')
+    }).on('mouseleave', function() {
+      $("#simpanGaji").addClass('bg-danger animate__bounce animate__infinite	infinite')
+        });
     // Inisialisasi DataTable pada tabel invoice
     var table = $('#table-invoice').DataTable();
 

@@ -175,8 +175,8 @@
                     <table class="table table-striped" id="table-gaji" width="100%">
                          <thead>
                               <tr>
-                                   <th class="col-sm-2">Nama</th>
-                                   <th class="col-sm-2">Item</th>
+                                   <!-- <th class="col-sm-2">Tanggal</th> -->
+                                   <th>Item</th>
                                    <th class="col-sm-3">Description</th>
                                    <th>Cost</th>
                                    <th>Qty</th>
@@ -186,10 +186,10 @@
                          </thead>
                          <tbody>
                               <?php foreach ($data['invSovana'] as $invS) : ?>
-                                   <tr>
+                                   <tr style="font-size: 10px;">
 
-                                        <td class="text-capitalize"><?= $invS['tanggal']; ?></td>
-                                        <td class="col-sm-2 text-capitalize"><?= $invS['item']; ?></td>
+                                        <!-- <td class="text-capitalize"><?= $invS['tanggal']; ?></td> -->
+                                        <td class="col-sm-3 text-capitalize"><?= $invS['item']; ?></td>
                                         <td class="text-capitalize"><?= $invS['description']; ?></td>
                                         <td class="text-bold"><?= number_format($invS['cost'], 0, ',', '.'); ?></td>
                                         <td><?= $invS['qty']; ?></td>
